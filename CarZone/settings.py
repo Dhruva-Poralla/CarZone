@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'CarZone.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'CarZone',
+        'USER':'postgres',
+        'PASSWORD':'1234',
+        'HOST':'localhost',
+        'PORT':'5432'
     }
 }
 
@@ -112,7 +116,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -123,3 +127,7 @@ STATIC_Root=os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR, 'CarZone/static'),
 ]
+
+#media settings
+MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+MEDIA_URL='/media/'
